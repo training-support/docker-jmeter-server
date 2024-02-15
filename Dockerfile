@@ -2,14 +2,14 @@ FROM ubuntu:14.04
 
 MAINTAINER Hector Cordero <hhcordero@gmail.com>
 
-ENV JMETER_VERSION 2.13
+ENV JMETER_VERSION 5.6.2
 ENV JMETER_HOME /usr/local/apache-jmeter-${JMETER_VERSION}
 ENV JMETER_BIN $JMETER_HOME/bin
 ENV IP 127.0.0.1
 ENV RMI_PORT 1099
 
 RUN apt-get -qq update && \
-    apt-get -yqq install openjdk-7-jre-headless unzip && \
+    apt-get -yqq install openjdk-11-jre-headless unzip && \
     apt-get -q clean && \
     rm -rf /var/lib/apt/lists/*
 
