@@ -2,13 +2,13 @@ FROM alpine:3.2
 
 MAINTAINER Hector Cordero <hhcordero@gmail.com>
 
-ENV JMETER_VERSION 2.13
+ENV JMETER_VERSION 5.6.2
 ENV JMETER_HOME /usr/local/apache-jmeter-${JMETER_VERSION}
 ENV JMETER_BIN $JMETER_HOME/bin
 ENV IP 127.0.0.1
 ENV RMI_PORT 1099
 
-RUN apk --update add openjdk7-jre tar unzip bash && \
+RUN apk --update add openjdk11-jre tar unzip bash && \
     rm -rf /var/cache/apk/*
 
 COPY dependencies /tmp/dependencies
